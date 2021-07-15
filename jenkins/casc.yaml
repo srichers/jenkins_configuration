@@ -10,6 +10,11 @@ jenkins:
       permissions:
         - "Overall/Administer:admin"
         - "Overall/Read:anonymous"
+security:
+  queueItemAuthenticator:
+    authenticators:
+    - global:
+        strategy: triggeringUsersAuthorizationStrategy
 unclassified:
   location:
     url: http://128.32.95.154/:8080/
