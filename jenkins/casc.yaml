@@ -13,7 +13,18 @@ jenkins:
   remotingSecurity:
     enabled: true
   numExecutors: 0
-
+  nodes:
+    - permanent:
+        name: "agent-flashx"
+        nodeDescription: "FLASH-X build agent"
+        remoteFS: "/home/jenkins"
+        launcher:
+          ssh:
+            credentialsId: jenkins
+            host: localhost
+            sshHostKeyVerificationStrategy:
+              manuallyProvidedKeyVerificationStrategy:
+                key: ${SSH_PUBLIC_KEY}
 credentials:
   system:
     domainCredentials:
