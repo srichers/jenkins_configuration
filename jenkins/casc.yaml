@@ -1,0 +1,10 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+unclassified:
+  location:
+    url: http://128.32.95.154/:8080/

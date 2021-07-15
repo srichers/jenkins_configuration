@@ -1,5 +1,6 @@
 based on following the guide at https://www.digitalocean.com/community/tutorials/how-to-automate-jenkins-setup-with-docker-and-jenkins-configuration-as-code
 
 USAGE:
+update server ip address in casc.yaml (      url: http://128.32.95.154/:8080/)
 docker build -t jenkins:jcasc .
-docker run --name jenkins -rm -p 8080:8080 jenkins:jcasc
+docker run --name jenkins -rm -p 8080:8080 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=password jenkins:jcasc
