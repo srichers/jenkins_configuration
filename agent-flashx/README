@@ -1,0 +1,7 @@
+Must first have ssh public key. Copy and paste without any additional quotes.
+
+
+USAGE:
+docker run -d --rm --name=agent1 --network jenkins -e "JENKINS_AGENT_SSH_PUBKEY=`cat /home/srichers/.ssh/jenkins_agent_key.pub`" jenkins/ssh-agent:jdk11
+VARS="HOME=|USER=|MAIL=|LC_ALL=|LS_COLORS=|LANG=|HOSTNAME=|PWD=|TERM=|SHLVL=|LANGUAGE=|_="
+docker exec agent1 sh -c "env | egrep -v '^(${VARS})' >> /etc/environment"

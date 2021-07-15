@@ -21,10 +21,9 @@ jenkins:
         launcher:
           ssh:
             credentialsId: jenkins
-            host: localhost
+            host: 172.19.0.2
             sshHostKeyVerificationStrategy:
-              manuallyProvidedKeyVerificationStrategy:
-                key: ${SSH_PUBLIC_KEY}
+              manuallyTrustedKeyVerificationStrategy
 credentials:
   system:
     domainCredentials:
