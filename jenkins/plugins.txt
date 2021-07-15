@@ -8,6 +8,7 @@ credentials-binding:latest
 email-ext:latest
 git:latest
 github-branch-source:latest
+github-oauth:latest
 gradle:latest
 ldap:latest
 mailer:latest
