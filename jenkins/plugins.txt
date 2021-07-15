@@ -22,3 +22,6 @@ workflow-aggregator:latest
 ws-cleanup:latest
 blueocean:latest
 docker-workflow:latest
+job-dsl
+workflow-job
+workflow-cps

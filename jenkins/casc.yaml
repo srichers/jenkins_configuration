@@ -35,15 +35,17 @@ credentials:
               username: jenkins
               privateKeySource:
                 directEntry
-      - basicSSHUserPrivateKey:
-	  description: github ssh key
-          id: "github-ssh"
-          scope: GLOBAL
-          privateKeySource:
-            directEntry
+          - basicSSHUserPrivateKey:
+              description: github ssh key
+              id: "github-ssh"
+              scope: GLOBAL
+              privateKeySource:
+                directEntry
 security:
   queueItemAuthenticator:
     authenticators:
     - global:
         strategy: triggeringUsersAuthorizationStrategy
 
+jobs:
+  - file: /usr/local/seedjob.groovy
