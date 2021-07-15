@@ -13,11 +13,27 @@ jenkins:
   remotingSecurity:
     enabled: true
   numExecutors: 0
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - basicSSHUserPrivateKey:
+              description: Jenkins ssh key
+              id: jenkins
+              scope: GLOBAL
+              username: jenkins
+              privateKeySource:
+                directEntry:
+                  privateKey: ${SSH_PRIVATE_KEY}
+
 security:
   queueItemAuthenticator:
     authenticators:
     - global:
         strategy: triggeringUsersAuthorizationStrategy
+
 unclassified:
   location:
     url: http://128.32.95.154/:8080/
+    
