@@ -34,16 +34,16 @@ credentials:
               scope: GLOBAL
               username: jenkins
               privateKeySource:
-                directEntry:
-                  privateKey: ${SSH_PRIVATE_KEY}
-
+                directEntry
+      - basicSSHUserPrivateKey:
+	  description: github ssh key
+          id: "github-ssh"
+          scope: GLOBAL
+          privateKeySource:
+            directEntry
 security:
   queueItemAuthenticator:
     authenticators:
     - global:
         strategy: triggeringUsersAuthorizationStrategy
 
-unclassified:
-  location:
-    url: http://128.32.95.154/:8080/
-    
