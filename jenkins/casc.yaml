@@ -12,6 +12,7 @@ jenkins:
         - "Overall/Read:anonymous"
   remotingSecurity:
     enabled: true
+  numExecutors: 0
 security:
   queueItemAuthenticator:
     authenticators:
