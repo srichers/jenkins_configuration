@@ -1,5 +1,5 @@
-
-
 USAGE:
 docker network create jenkins
 ssh-keygen -f ~/.ssh/jenkins_agent_key  # no passcode
+
+First start up slave containers, then start up jenkins container
