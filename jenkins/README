@@ -5,5 +5,4 @@ see server_ip:8080/configuration-as-code/reference for additional configuration 
 USAGE:
 update server ip address in casc.yaml (      url: http://128.32.95.154/:8080/)
 docker build -t jenkins:jcasc .
-docker network create jenkins
 docker run --name jenkins --rm --network jenkins --publish 8080:8080 --publish 5000:5000 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=password jenkins:jcasc
