@@ -3,8 +3,8 @@ jenkins:
     local:
       allowsSignup: false
       users:
-        - id: ${JENKINS_ADMIN_ID}
-          password: ${JENKINS_ADMIN_PASSWORD}
+        - id: ""
+          password: ""
   authorizationStrategy:
     globalMatrix:
       permissions:
@@ -20,7 +20,7 @@ jenkins:
         remoteFS: "/home/jenkins"
         launcher:
           ssh:
-            credentialsId: jenkins
+            credentialsId: jenkins_agent_key
             host: 172.19.0.2
             sshHostKeyVerificationStrategy:
               manuallyTrustedKeyVerificationStrategy
@@ -30,17 +30,15 @@ credentials:
       - credentials:
           - basicSSHUserPrivateKey:
               description: Jenkins ssh key
-              id: jenkins
+              id: jenkins_agent_key
               scope: GLOBAL
               username: jenkins
               privateKeySource:
                 directEntry
-          - basicSSHUserPrivateKey:
-              description: github ssh key
-              id: "github-ssh"
+          - usernamePassword:
+              description: "github personal access token"
+              id: "github_personal_access_token"
               scope: GLOBAL
-              privateKeySource:
-                directEntry
 security:
   queueItemAuthenticator:
     authenticators:
