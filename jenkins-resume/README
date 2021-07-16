@@ -1,0 +1,5 @@
+Run this image if a persistent jenkins volume already exists and you don't want to reset the configuration.
+
+USAGE:
+docker build -t jenkins:casc .
+docker run -d --name jenkins --rm --network jenkins --volume jenkins-data:/var/jenkins_home --publish 8080:8080 --publish 5000:5000 jenkins:jcasc

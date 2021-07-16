@@ -1,13 +1,10 @@
-In the run command, you must fill in github credentials
-(github --> settings --> developer settings --> OAuth Apps)
- - github client ID
- - github client secret
-
 In the gui, you must fill in:
- - the admin username and password (prompted)
- - the ssh key for controller-agent communication (global credentials)
+ - the admin password (prompted). Username must be "admin"
+ - the ssh key for controller-agent communication matching pubkey given to agent (global credentials)
  - the github personal access token as username/password (global credentials)
+
+If a jenkins volume already exists, the configuration script will reset configuration values like credentials.
 
 USAGE:
 docker build -t jenkins:jcasc .
-docker run --name jenkins --rm --network jenkins --publish 8080:8080 --publish 5000:5000 jenkins:jcasc
+docker run -d --name jenkins --rm --network jenkins --volume jenkins-data:/var/jenkins_home --publish 8080:8080 --publish 5000:5000 jenkins:jcasc
