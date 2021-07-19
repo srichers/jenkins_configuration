@@ -86,7 +86,7 @@ CFLAGS_TEST = -ggdb -O0 -c
 CFLAGS_HYPRE = -I${HYPRE_PATH}/include
 
 # if we are using HDF5, we need to specify the path to the include files
-CFLAGS_HDF5 = -I/usr/include/hdf5/serial -DH5_USE_16_API
+CFLAGS_HDF5 = -I/usr/include/hdf5/serial #-DH5_USE_16_API
 CFLAGS_NCMPI = -I${NCMPI_PATH}/include
 
 #----------------------------------------------------------------------------
