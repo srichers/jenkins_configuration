@@ -15,7 +15,7 @@ multibranchPipelineJob('FLASH-MCRHD') {
             id('3') // IMPORTANT: use a constant and unique identifier
             remote('https://github.com/srichers/FLASH-MCRHD.git')
             credentialsId('github_personal_access_token')
-            includes('master')
+            includes('*')
         }
     }
 }
