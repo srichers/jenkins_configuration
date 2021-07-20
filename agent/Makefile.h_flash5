@@ -8,6 +8,7 @@ LIB_STDCXX = -lstdc++
 HDF4_PATH  =
 #HDF5_PATH  = /usr/local/hdf5
 #HYPRE_PATH = /usr/local/hypre
+LIB_LAPACK = /usr/lib/x86_64-linux-gnu/lapack/liblapack.so /usr/lib/x86_64-linux-gnu/blas/libblas.so
 
 ZLIB_PATH  =
 
@@ -67,8 +68,8 @@ FFLAGS_TEST = -ggdb -c -O0 -fdefault-real-8 -fdefault-double-8
 
 FFLAGS_HYPRE = -I${HYPRE_PATH}/include
 
-
-F90FLAGS = -I/usr/include/hdf5/serial/ -ffree-line-length-none
+FFLAGS_HDF5 = -I/usr/include/hdf5/serial
+F90FLAGS = $(FFLAGS_HDF5) -ffree-line-length-none
 
 
 #The macro _FORTIFY_SOURCE adds some lightweight checks for buffer
