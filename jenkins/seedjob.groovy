@@ -1,4 +1,5 @@
 multibranchPipelineJob('FLASH-X') {
+    properties([pipelineTriggers([cron('H 23 * * *')])])
     branchSources {
         git {
             id('1') // IMPORTANT: use a constant and unique identifier
@@ -10,6 +11,7 @@ multibranchPipelineJob('FLASH-X') {
 }
 
 multibranchPipelineJob('BANG-neutrino-oscillation') {
+    properties([pipelineTriggers([cron('H 23 * * *')])])
     branchSources {
         git {
             id('2') // IMPORTANT: use a constant and unique identifier
@@ -21,6 +23,7 @@ multibranchPipelineJob('BANG-neutrino-oscillation') {
 }
 
 multibranchPipelineJob('FLASH-MCRHD') {
+    properties([pipelineTriggers([cron('H 23 * * *')])])
     branchSources {
         git {
             id('3') // IMPORTANT: use a constant and unique identifier
